@@ -1,0 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="pageTitle" value="Invoice"/><jsp:include page="/WEB-INF/views/common/header.jsp"/>
+<div class="container py-5 narrow"><div class="invoice-card"><div class="d-flex justify-content-between align-items-start"><div><img src="${pageContext.request.contextPath}/assets/images/logo.svg" width="54" alt=""><h2 class="mt-3">PIXORA Invoice</h2></div><div class="text-end"><strong>${invoiceRef}</strong><div class="small text-muted">${payment.createdAt}</div></div></div><hr>
+<div class="detail-grid"><div><small>Booking</small><strong>${booking.bookingRef}</strong></div><div><small>Payment</small><strong>${payment.paymentRef}</strong></div><div><small>Event</small><strong><c:out value="${booking.eventType}"/></strong></div><div><small>Status</small><strong>${payment.status}</strong></div></div><hr><div class="d-flex justify-content-between fs-4"><span>Total</span><strong>LKR ${payment.amount}</strong></div>
+<button class="btn btn-dark mt-4" onclick="window.print()"><i class="bi bi-printer"></i> Print / Save PDF</button></div></div>
+<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
